@@ -52,7 +52,9 @@ $(document).ready(function(){
       $("#toppingsDisplay").text(newPizza.toppings);
     });
     totalCost += newPizza.pizzaCost();
-    $("#costDisplay").text((Math.round(totalCost * 100) /100).toFixed(2));
+    var tax = totalCost * 0.15;
+    $("#taxDisplay").text((Math.round(tax * 100) /100).toFixed(2))
+    $("#costDisplay").text((Math.round((totalCost + tax) * 100) /100).toFixed(2));
   });
   $("#orderMore").click(function(){
     $("#creationForm").trigger("reset");
