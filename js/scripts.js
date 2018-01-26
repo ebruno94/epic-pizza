@@ -47,14 +47,15 @@ $(document).ready(function(){
     $("ul#pizzaList").append("<li><span class='pizza'>"+ "Pizza #"+ pizzaNum + "</span></li>");
     $(".pizza").last().click(function(){
       $("#showInfo").toggle("fold");
+      $("#pizzaName").text("Pizza #" + pizzaNum);
       $("#crustDisplay").text(newPizza.crust);
       $("#sizeDisplay").text(newPizza.size);
       $("#toppingsDisplay").text(newPizza.toppings);
     });
     totalCost += newPizza.pizzaCost();
     var tax = totalCost * 0.15;
-    $("#taxDisplay").text(parseFloat((Math.round(tax * 100) /100).toFixed(2)));
-    $("#costDisplay").text(parseFloat((Math.round((totalCost + tax) * 100) /100).toFixed(2)));
+    $("#taxDisplay").text((Math.round(tax * 100) /100).toFixed(2));
+    $("#costDisplay").text((Math.round((totalCost + tax) * 100) /100).toFixed(2));
 
     $("#selectToppings, #selectionContainer").hide("ease");
     $("#confirmContainer").show("ease");

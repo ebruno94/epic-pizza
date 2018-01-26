@@ -9,17 +9,15 @@
     <title>EPIC PIZZA | Ernest Bruno</title>
   </head>
   <body>
-    <div class="container" id="openingContainer">
-      <div class="jumbotron">
-        <h6>Welcome to</h6>
+      <div class="jumbotron" id="openingContainer">
+        <h3>Welcome to</h3>
         <h1>EPIC PIZZA</h1>
         <button type="button" class="btn btn-inverse" id="btnPlace">PLACE AN ORDER</button>
       </div>
-    </div>
     <div class="container" id="creationContainer">
-      <div id="imageContainer">
+      <!-- <div id="imageContainer">
         <img>
-      </div>
+      </div> -->
       <form id="creationForm">
         <div class="container" id="selectionContainer">
           <div id="selectCrust">
@@ -108,11 +106,14 @@
       </div>
       <div class="row">
         <div class="col-md-6">
+
           <ul id="pizzaList">
 
           </ul>
         </div>
         <div class="col-md-6" id="showInfo">
+          <h4>&nbsp; &nbsp; <span id="pizzaName"> </span></h4>
+          <hr>
           <ul>
             <li><strong> Crust: </strong> <span id="crustDisplay"></span></li>
             <li><strong> Size: </strong> <span id="sizeDisplay"></span></li>
@@ -137,5 +138,6 @@
       <br><br><br><hr>
       <button type="button" class="btn btn-inverse" id="btnHome">RETURN TO HOME</button>
     </div>
+
   </body>
 </html>
