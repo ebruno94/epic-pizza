@@ -14,7 +14,7 @@ function Pizza(indexCrust, indexSize, indexToppings, toppings){
   this.iToppings = indexToppings;
 };
 
-Pizza.prototype.totalCost = function(){
+Pizza.prototype.pizzaCost = function(){
   var toppingTotal = 0;
   (this.iToppings).forEach(function(toppingIndex){
     toppingTotal += toppingCost[toppingIndex];
@@ -24,12 +24,15 @@ Pizza.prototype.totalCost = function(){
 
 
 $(document).ready(function(){
+  var pizzaNum = 0;
   var indexCrust = 0;
   var indexSize = 0;
   var indexToppings = [];
+  var totalCost = 0;
 
   $("#creationForm").submit(function(event){
     event.preventDefault();
+    pizzaNum += 1;
     indexCrust = parseInt($("input:radio[name=typeCrust]:checked").val());
     indexSize = parseInt($("input:radio[name=sizeCrust]:checked").val());
     var tempNameTops = [];
@@ -40,10 +43,20 @@ $(document).ready(function(){
     indexToppings.forEach(function(index){
       tempNameTops.push(toppingName[index]);
     })
-    var pizza = new Pizza(indexCrust, indexSize, indexToppings, tempNameTops);
-    $("#crustDisplay").text(pizza.crust);
-    $("#sizeDisplay").text(pizza.size);
-    $("#toppingsDisplay").text(pizza.toppings);
-    $("#costDisplay").text(pizza.totalCost());
+    var newPizza = new Pizza(indexCrust, indexSize, indexToppings, tempNameTops);
+    $("ul#pizzaList").append("<li><span class='pizza'>"+ "Pizza #"+ pizzaNum + "</span></li>");
+    $(".pizza").last().click(function(){
+      $("#showInfo").slideToggle("ease");
+      $("#crustDisplay").text(newPizza.crust);
+      $("#sizeDisplay").text(newPizza.size);
+      $("#toppingsDisplay").text(newPizza.toppings);
+    });
+    totalCost += newPizza.pizzaCost();
+    $("#costDisplay").text(parseFloat(Math.round(totalCost * 100) /100).toFixed(2));
   });
+  $("#orderMore").click(function(){
+    $("#creationForm").trigger("reset");
+    $("#creationForm").find("input").removeAttr("checked");
+    indexToppings = [];
+  })
 });
