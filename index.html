@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <meta charset="utf-8">
+    <title>EPIC PIZZA | Ernest Bruno</title>
+  </head>
+  <body>
+    <div class="container" id="openingContainer">
+      <div class="jumbotron">
+        <h6>Welcome to</h6>
+        <h1>EPIC PIZZA</h1>
+        <button type="button" class="btn btn-inverse" id="btnPlace">PLACE AN ORDER</button>
+      </div>
+    </div>
+    <div class="container" id="creationContainer">
+      <div id="imageContainer">
+        <img>
+      </div>
+      <form id="creationForm">
+        <div class="container" id="selectionContainer">
+          <div id="selectCrust">
+            <h4>Type of Crust</h4>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="typeCrust" value="0">
+                Thin Crust
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="typeCrust" value="1">
+                Brooklyn Style
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="typeCrust" value="2">
+                Handmade Pan Pizza Crust
+              </label>
+            </div>
+            <br>
+            <h4>Size</h4>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="sizeCrust" value="0">
+                Small (12")
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="sizeCrust" value="1">
+                Medium (14")
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label>
+                <input type="radio" name="sizeCrust" value="2">
+                Large (16")
+              </label>
+            </div>
+            <br>
+            <button type="button" class="btn btn-inverse" id="btnToppings">CHOOSE TOPPINGS</button>
+          </div>
+          <div id="selectToppings">
+            <h4> Choose your Toppings! -- <strong> NO LIMIT </strong></h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input type="checkbox" name="toppings" value="0"> Pepperoni <br>
+                  <input type="checkbox" name="toppings" value="1"> Mushrooms <br>
+                  <input type="checkbox" name="toppings" value="2"> Onions <br>
+                  <input type="checkbox" name="toppings" value="3"> Sausage <br>
+                  <input type="checkbox" name="toppings" value="4"> Bacon <br>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-check">
+                  <input type="checkbox" name="toppings" value="5"> Extra Cheese <br>
+                  <input type="checkbox" name="toppings" value="6"> Black Olives <br>
+                  <input type="checkbox" name="toppings" value="7"> Green Pepper <br>
+                  <input type="checkbox" name="toppings" value="8"> Pineapple <br>
+                  <input type="checkbox" name="toppings" value="9"> Spinach <br>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-inverse">Previous</button>
+            <button type="submit" class="btn btn-inverse">SUBMIT</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container" id="confirmContainer">
+      <h4>Your pizza has the following:</h4>
+      <ul>
+        <li>Crust: <span id="crustDisplay"></span></li>
+        <li>Toppings: <span id="toppingsDisplay"></span></li>
+      </ul>
+      <hr>
+      <h4>Total Cost: <span id="costDisplay"></span></h4>
+      <button type="button" class="btn btn-inverse"> ORDER MORE!</button>
+      <button type="button" class="btn btn-inverse"> PLACE ORDER!</button>
+    </div>
+    <div class="container" id="thanksContainer">
+      <h2>THANK YOU!</h2>
+      <p>Your order has been placed! Your pizza will arrive momentarily.</p>
+      <button type="button" class="btn btn-inverse">RETURN TO HOME</button>
+    </div>
+  </body>
+</html>
