@@ -95,15 +95,24 @@
       </form>
     </div>
     <div class="container" id="confirmContainer">
-      <h4>Your pizza has the following:</h4>
-      <ul>
-        <li>Crust: <span id="crustDisplay"></span></li>
-        <li>Size: <span id="sizeDisplay"></span></li>
-        <li>Toppings: <span id="toppingsDisplay"></span></li>
-      </ul>
+      <div class="row">
+        <div class="col-md-6">
+          <h4> Your Pizzas:</h4>
+          <ul id="pizzaList">
+
+          </ul>
+        </div>
+        <div class="col-md-6" id="showInfo">
+          <ul>
+            <li><strong> Crust: </strong> <span id="crustDisplay"></span></li>
+            <li><strong> Size: </strong> <span id="sizeDisplay"></span></li>
+            <li><strong> Toppings: </strong> <span id="toppingsDisplay"></span></li>
+          </ul>
+        </div>
       <hr>
-      <h4>Total Cost: <span id="costDisplay"></span></h4>
-      <button type="button" class="btn btn-inverse"> ORDER MORE!</button>
+    </div>
+      <h4>Total Cost: $<span id="costDisplay"></span></h4>
+      <button type="button" class="btn btn-inverse" id="orderMore"> ORDER MORE!</button>
       <button type="button" class="btn btn-inverse"> PLACE ORDER!</button>
     </div>
     <div class="container" id="thanksContainer">
