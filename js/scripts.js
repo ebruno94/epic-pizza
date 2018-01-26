@@ -46,19 +46,45 @@ $(document).ready(function(){
     var newPizza = new Pizza(indexCrust, indexSize, indexToppings, tempNameTops);
     $("ul#pizzaList").append("<li><span class='pizza'>"+ "Pizza #"+ pizzaNum + "</span></li>");
     $(".pizza").last().click(function(){
-      $("#showInfo").slideToggle("ease");
+      $("#showInfo").toggle("fold");
       $("#crustDisplay").text(newPizza.crust);
       $("#sizeDisplay").text(newPizza.size);
       $("#toppingsDisplay").text(newPizza.toppings);
     });
     totalCost += newPizza.pizzaCost();
     var tax = totalCost * 0.15;
-    $("#taxDisplay").text((Math.round(tax * 100) /100).toFixed(2))
-    $("#costDisplay").text((Math.round((totalCost + tax) * 100) /100).toFixed(2));
+    $("#taxDisplay").text(parseFloat((Math.round(tax * 100) /100).toFixed(2)));
+    $("#costDisplay").text(parseFloat((Math.round((totalCost + tax) * 100) /100).toFixed(2)));
+
+    $("#selectToppings, #selectionContainer").hide("ease");
+    $("#confirmContainer").show("ease");
   });
+
   $("#orderMore").click(function(){
     $("#creationForm").trigger("reset");
     $("#creationForm").find("input").removeAttr("checked");
     indexToppings = [];
+    $("#confirmContainer").hide("ease");
+    $("#selectCrust, #selectionContainer").show("ease");
   })
+  $("#btnPlace").click(function(){
+    $("#openingContainer").hide("ease");
+    $("#selectionContainer").show("ease");
+    $("#selectCrust").show("ease");
+  });
+  $("#btnToppings").click(function(){
+    $("#selectCrust").hide("ease");
+    $("#selectToppings").show("ease");
+  });
+  $("#btnPrevious").click(function(){
+    $("#selectToppings").hide("ease");
+    $("#selectCrust").show("ease");
+  });
+  $("#placeOrder").click(function(){
+    $("#confirmContainer").hide("ease");
+    $("#thanksContainer").show("ease");
+  });
+  $("#btnHome").click(function(){
+    location.reload();
+  });
 });
