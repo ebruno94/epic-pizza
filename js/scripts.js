@@ -5,20 +5,22 @@ var crustName = ['Thin Crust', 'Brooklyn Style', 'Handmade Pan Pizza Crust']
 var sizeName = ['Small (12")', 'Medium (14")', 'Large (14")']
 var toppingName = ["Pepperoni", " Mushrooms"," Onions"," Sausage"," Bacon"," Extra Cheese", " Black Olives", " Green Peppers", " Pineapple", " Spinach"];
 
-function Pizza(crust, size, toppings){
-  this.crust = crust;
-  this.size = size;
+function Pizza(indexCrust, indexSize, indexToppings, toppings){
+  this.crust = crustName[indexCrust];
+  this.size = sizeName[indexSize];
   this.toppings = toppings;
+  this.iCrust = indexCrust;
+  this.iSize = indexSize;
+  this.iToppings = indexToppings;
 };
 
-// Pizza.prototype.toppingsCost = function(){
-//   var total = 0;
-//
-//   .forEach(function(topping){
-//     pizzaCost += parseInt(topping);
-//   });
-//   return total;
-// }
+Pizza.prototype.totalCost = function(){
+  var toppingTotal = 0;
+  (this.iToppings).forEach(function(toppingIndex){
+    toppingTotal += toppingCost[toppingIndex];
+  })
+  return toppingTotal + crustCost[this.iCrust] + sizeCost[this.iSize]
+};
 
 
 $(document).ready(function(){
@@ -38,9 +40,10 @@ $(document).ready(function(){
     indexToppings.forEach(function(index){
       tempNameTops.push(toppingName[index]);
     })
-    var pizza = new Pizza(crustName[indexCrust], sizeName[indexSize], tempNameTops);
+    var pizza = new Pizza(indexCrust, indexSize, indexToppings, tempNameTops);
     $("#crustDisplay").text(pizza.crust);
     $("#sizeDisplay").text(pizza.size);
     $("#toppingsDisplay").text(pizza.toppings);
+    $("#costDisplay").text(pizza.totalCost());
   });
 });
