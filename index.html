@@ -93,7 +93,7 @@
               </div>
             </div>
             <br><hr>
-            <button type="button" class="btn btn-inverse">Previous</button>
+            <button type="button" class="btn btn-inverse" id="btnPrevious">Previous</button>
             <button type="submit" class="btn btn-inverse">SUBMIT</button>
           </div>
         </div>
@@ -101,9 +101,13 @@
     </div>
     <div class="container" id="confirmContainer">
       <div class="row">
-        <div class="col-md-6">
-          <h4> Your Pizzas:</h4>
+        <div class="col-md-12">
+          <h4> &nbsp; &nbsp;Your Pizzas:</h4>
           <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
           <ul id="pizzaList">
 
           </ul>
@@ -115,22 +119,23 @@
             <li><strong> Toppings: </strong> <span id="toppingsDisplay"></span></li>
           </ul>
         </div>
-      <hr>
-    </div>
+      </div>
+      <br>
       <hr>
       <p> Total Tax : $<span id="taxDisplay"></span></p>
       <h4>Total Cost: $<span id="costDisplay"></span></h4>
       <br><hr>
       <button type="button" class="btn btn-inverse" id="orderMore"> ORDER MORE!</button>
-      <button type="button" class="btn btn-inverse"> PLACE ORDER!</button>
+      <button type="button" class="btn btn-inverse" id="placeOrder"> PLACE ORDER!</button>
     </div>
     <div class="container" id="thanksContainer">
       <hr>
       <h2>THANK YOU!</h2>
       <hr>
+      <br><br><br>
       <p>Your order has been placed! Your pizza will arrive momentarily.</p>
       <br><br><br><hr>
-      <button type="button" class="btn btn-inverse">RETURN TO HOME</button>
+      <button type="button" class="btn btn-inverse" id="btnHome">RETURN TO HOME</button>
     </div>
   </body>
 </html>
